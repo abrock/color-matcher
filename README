@@ -1,0 +1,21 @@
+Simple color matching utility
+=============================
+
+This tool loads a text file containing in each line an integer and a RGB hex value separated by whitespace.
+Then it waits for input, each given RGB hex value is mapped to the closest hex value in the file
+in the sense of Lab color distance.
+
+Installation
+------------
+
+make
+
+
+Usage
+-----
+
+For the Sulky embroidery thread colors use
+./color-matcher sulky.data
+
+For your own data use
+./color-matcher your_own.data
