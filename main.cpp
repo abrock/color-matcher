@@ -354,7 +354,6 @@ int main(int argc, char** argv) {
 
     while (std::cin) {
         std::getline(std::cin, input);
-        std::cout << input << std::endl;
         if (input.size() > 5) {
             int r = 0, g = 0, b = 0;
             string2rgb(input, r, g, b); 
