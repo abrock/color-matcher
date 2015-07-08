@@ -1,0 +1,112 @@
+\input{header}
+
+Gegeben Vektoren $a_1, \cdots, a_n \in \R^c$ und $b_1, \cdots, b_n \in \R^d$ suchen wir eine lineare Abbildung $X \colon \R^c \to \R^d$, die folgendes Zielfunktional minimiert:
+%
+\begin{align*}
+f(X) :&= \sum\limits_{i=1}^n \|X a_i - b_i\|
+\end{align*}
+%
+Wobei $\|\cdot\|$ entweder die 1-Norm oder das Quadrat der 2-Norm ist.
+Notation:
+%
+\begin{align*}
+X &= \begin{pmatrix} x_1^T \\ x_2^T \\ \vdots \\ x_d^T \end{pmatrix}
+\end{align*}
+%
+Wobei $x_i \in \R^c$ Spaltenvektoren sind.
+
+Die Normen sind invariant unter Transposition, deshalb können wir schreiben:
+%
+\begin{align*}
+f(X) &= \sum\limits_{i=1}^n \|a_i^T X^T - b_i^T\|
+\end{align*}
+%
+Nun könnten wir $X^T$ durch irgendein Least-Squares-Verfahren bestimmen lassen.
+Das Problem daran ist, dass wir im Fall der 1-Norm zwar ein Verfahren für
+$\argmin_u \|Yu-v\|_1$ mit $u \in \R^e$ haben aber keins für
+$\argmin_U \|YU-V\|_1$ mit $U \in \R^{f \times g}$.
+Deshalb brauchen wir eine modifizierte Version des Problems, bei dem die gesuchte Variable
+als Spaltenvektor dargestellt ist.
+Betrachte folgendes System:
+%
+\begin{align*}
+\underbrace{
+\begin{pmatrix}
+a_1^T & 0 & \cdots & 0 \\
+0 & a_1^T & 0 & 0 \\
+\vdots & \ddots & \ddots & 0 \\
+0 & \cdots & \cdots & a_1^T \\
+\end{pmatrix}
+}_{\tilde A_1}
+\underbrace{
+\begin{pmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_d
+\end{pmatrix}
+}_{\tilde X}
+-
+b_1
+\end{align*}
+%
+Man beachte, dass $\tilde X$ ein Zeilenvektor mit $c\cdot d$ Einträgen ist.
+$\tilde A_1$ ist eine $d \times c \cdot d$-Matrix, hat also $c \cdot d^2$ Einträge,
+das macht keinen Spaß in Dimensionen größer drei, zum Farbfilter lernen geht es aber noch.
+
+Wir berechnen $\|\tilde A_1 \tilde X -b\|$:
+%
+\begin{align*}
+\|\tilde A_1 \tilde X -b\| &= 
+\l\|
+\begin{pmatrix}
+a_1^T & 0 & \cdots & 0 \\
+0 & a_1^T & 0 & 0 \\
+\vdots & \ddots & \ddots & 0 \\
+0 & \cdots & \cdots & a_1^T \\
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_d
+\end{pmatrix}
+-
+b_1
+\r\| \\
+&= \l\| \begin{pmatrix} a_i^T x_1 \\ a_1^T x_2 \\ \cdots \\ a_1^T x_d \end{pmatrix} - b_1 \r\| \\
+&= \l\| a_1^T X^T - b_1 \r\|
+\end{align*}
+%
+Beide potentielle Normen sind "`separabel"' in dem Sinn, dass:
+%
+\begin{align*}
+\|x\| &= \sum\limits_{i=1}^d \|x^i\|
+\end{align*}
+%
+Wobei $x = (x_1, x_2, \cdots, x_i)^T \in \R^d$ ein beliebiger Vektor mit Einträgen $x^i$ ist.
+Das erlaubt es uns, unsere Zielfunktion $f$ wie folgt zu schreiben:
+%
+\begin{align*}
+f(X) &= \l\| \begin{pmatrix}
+a_1^T & 0 & \cdots & 0 \\
+0 & a_1^T & 0 & 0 \\
+\vdots & \ddots & \ddots & 0 \\
+0 & \cdots & \cdots & a_1^T \\
+a_2^T & 0 & \cdots & 0 \\
+0 & a_2^T & 0 & 0 \\
+\vdots & \ddots & \ddots & 0 \\
+0 & \cdots & \cdots & a_2^T \\
+\vdots & \vdots & \vdots & \vdots \\
+a_n^T & 0 & \cdots & 0 \\
+0 & a_n^T & 0 & 0 \\
+\vdots & \ddots & \ddots & 0 \\
+0 & \cdots & \cdots & a_n^T \\
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_d
+\end{pmatrix}
+-
+\begin{pmatrix}
+b_1 \\ b_2 \\ \vdots \\ b_n
+\end{pmatrix}
+ \r\|
+\end{align*}
+%
+Damit haben wir das Problem äquivalent umformuliert so dass die Einträge eines Zeilenvektors die gesuchten Variablen sind, aus denen wir am Ende die Matrix zusammenbauen können.
+
+\end{document}

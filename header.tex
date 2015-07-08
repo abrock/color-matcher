@@ -1,0 +1,98 @@
+\documentclass{scrbook}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, microtype}
+\usepackage{dsfont, xspace}
+
+
+%\title{Numerische Mathematik 2}
+%\author{Stephan Körkel}
+%\date{\today}
+
+\newcommand\Bezier{B\'ezier\xspace}
+\newcommand\obda{o.\,B.\,d.\,A.\xspace}
+\newcommand\zB{z.\,B.\xspace}
+\newcommand\st{s.\,t.\xspace}
+
+\newcommand\mathstuff{\mathds}
+\newcommand\bitm{\begin{itemize}}
+\newcommand\eitm{\end{itemize}}
+
+\newcommand\that{{\hat t}}
+\newcommand\tn{{t_0}}
+
+\newcommand\Chi{\mathcal{X}}
+\newcommand\cov{\mathrm{cov}}
+\newcommand\vwahr{v_{wahr}}
+\newcommand{\BIGOP}[1]{\mathop{\mathchoice%
+{\raise-0.22em\hbox{\huge $#1$}}%
+{\raise-0.05em\hbox{\Large $#1$}}{\hbox{\large $#1$}}{#1}}}
+\newcommand{\bigtimes}{\BIGOP{\times}}
+% nur fuer Bigboxplus andere Korrekturen
+\newcommand{\BIGboxplus}{\mathop{\mathchoice%
+{\raise-0.35em\hbox{\huge $\boxplus$}}%
+{\raise-0.15em\hbox{\Large $\boxplus$}}{\hbox{\large $\boxplus$}}{\boxplus}}}
+
+\renewcommand\phi{\varphi}
+%\newcommand\ellipsen{\circledast}
+\newcommand\ellipsen{\diamondsuit}
+\newcommand\bpm{\begin{pmatrix}}
+\newcommand\epm{\end{pmatrix}}
+\newcommand\epsmach{\varepsilon_{mach}}
+\newcommand\diag{\mathrm{diag}}
+\newcommand\ov{\overline}
+\newcommand\orthogonal{\perp}
+\newcommand\Rang{\mathrm{Rg}}
+\newcommand\Range{\mathrm{Range}}
+\newcommand\trace{\mathrm{Sp}}
+\newcommand\Image{\mathrm{Bild}}
+\newcommand\Rg{\mathrm{Rg}}
+\newcommand \tend{{t_{end}}}
+\newcommand\Log{\mathrm{Log}}
+\newcommand\R{\mathstuff{R}}
+\newcommand\C{\mathstuff{C}}
+\newcommand\E{\mathstuff{E}}
+\newcommand\N{\mathstuff{N}}
+\newcommand\Z{\mathstuff{Z}}
+\newcommand\K{\mathstuff{K}}
+\newcommand\Ho{\mathstuff{H}}
+\newcommand\re{\mathrm{Re\,}}
+\newcommand\im{\mathrm{Im\,}}
+\newcommand\argmax{\arg\!\max}
+\newcommand\argmin{\arg\!\min}
+\renewcommand\l{\left}
+\renewcommand\r{\right}
+\newcommand\dt{\,\mathrm dt}
+\newcommand\dd{\,\mathrm d}
+\newcommand\RA{\Rightarrow}
+\newcommand\LA{\Leftarrow}
+\newcommand\LRA{\Leftrightarrow}
+\newcommand\la\langle
+\newcommand\ra\rangle
+\newcommand\End{\mathrm{End}}
+\newcommand\intl{\int\limits}
+\newcommand\sign{\mathrm{sgn}}
+
+\newcommand\zb{z.\,B.\xspace}
+
+\newcommand\empha{\emph}
+
+\newcommand\eps{\varepsilon}
+
+\newcommand\chaptr[1]{\chapter*{#1} \addcontentsline{toc}{chapter}{#1}}
+
+\newcommand\msection[1]{\section*{#1} \addcontentsline{toc}{section}{#1}}
+
+\newcommand\msubsection[1]{\subsection*{#1} \addcontentsline{toc}{subsection}{#1}}
+%\newcommand\msubsubsection[1]{\subsection*{#1} \addcontentsline{toc}{subsection}{:: #1}}
+
+\newcommand\bemerkung[1]{\subsection*{Bemerkung #1} \addcontentsline{toc}{subsection}{Bemerkung #1}}
+
+\newcommand\msubsubsection[1]{\subsubsection*{#1}}
+
+\begin{document}
+
+
+
+
