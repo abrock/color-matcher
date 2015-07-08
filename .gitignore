@@ -1,1 +1,8 @@
 color-matcher
+*.swp
+*.swo
+*.aux
+*.fdb_latexmk
+*.log
+*.pdf 
+*.fls
